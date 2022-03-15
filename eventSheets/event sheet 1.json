@@ -1,0 +1,206 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 195423598651060,
+					"parameters": {
+						"object": "Paddle"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "ballCollision(true, runtime.objects.Paddle);"
+				}
+			],
+			"sid": 244229271932825
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 513948828962798,
+					"parameters": {
+						"object": "Paddle2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "ballCollision(true, runtime.objects.Paddle2);"
+				}
+			],
+			"sid": 488496082147812
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 514009555019978,
+					"parameters": {
+						"object": "bottom"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "ballCollision();"
+				}
+			],
+			"sid": 562625378688632
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 721391130985675,
+					"parameters": {
+						"object": "top"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "ballCollision();"
+				}
+			],
+			"sid": 104430106307404
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 686018519120827,
+					"parameters": {
+						"object": "sideleft"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "ballCollision(true, runtime.objects.sideleft);"
+				}
+			],
+			"sid": 804097613798135
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 275311610341063,
+					"parameters": {
+						"object": "sideright"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "ballCollision(true, runtime.objects.sideright);"
+				}
+			],
+			"sid": 639223954631695
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 882116235156560,
+					"parameters": {
+						"object": "bottomleft"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "ballCollision(true, runtime.objects.bottomleft);"
+				}
+			],
+			"sid": 738086932218215
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 820964081235857,
+					"parameters": {
+						"object": "bottomright"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "ballCollision(true, runtime.objects.bottomright);"
+				}
+			],
+			"sid": 126392452470331
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 755278069444941,
+					"parameters": {
+						"object": "topleft"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "ballCollision(true, runtime.objects.topleft);"
+				}
+			],
+			"sid": 403957643286772
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 799271818511035,
+					"parameters": {
+						"object": "topright"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "script",
+					"script": "ballCollision(true, runtime.objects.topleft);"
+				}
+			],
+			"sid": 374810701510961
+		}
+	],
+	"sid": 450709629107241
+}
