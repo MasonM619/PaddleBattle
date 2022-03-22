@@ -31,6 +31,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
@@ -77,6 +93,14 @@
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "gamma",
+			"name": "Gamma",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
 		}
 	],
 	"uniqueId": "smka7bel9a1",
@@ -95,7 +119,10 @@
 			"bottomright",
 			"topright",
 			"bottomleft",
-			"topleft"
+			"topleft",
+			"Title",
+			"MenuBtn",
+			"DirectionBG"
 		],
 		"subfolders": []
 	},
@@ -108,7 +135,8 @@
 	"layouts": {
 		"items": [
 			"TitleScreen",
-			"GameScreen"
+			"GameScreen",
+			"DirectionsScreen"
 		],
 		"subfolders": []
 	},

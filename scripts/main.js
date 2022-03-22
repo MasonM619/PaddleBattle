@@ -2,15 +2,20 @@
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
 
+let gameMode = "SinglePlayer";
+let ballMoving = false;
+let leftScore = 0;
+let rightScore = 0;
+
 runOnStartup(async runtime =>
 {
 	// Code to run on the loading screen.
 	// Note layouts, objects etc. are not yet available.
 	
-	runtime.addEventListener("beforeprojectstart", () => OnBeforeProjectStart(runtime));
+	runtime.addEventListener("beforeprojectstart", () => onBeforeProjectStart(runtime));
 });
 
-async function OnBeforeProjectStart(runtime)
+async function onBeforeProjectStart(runtime)
 {
 	// Code to run just before 'On start of layout' on
 	// the first layout. Loading has finished and initial
@@ -18,13 +23,53 @@ async function OnBeforeProjectStart(runtime)
 	
 	runtime.addEventListener("tick", () => Tick(runtime));
 	
+	// using bind to bind the runtime object as the first parameter in the "event listener" callbacks.
 	window.ballCollision = onBallCollision.bind(null, runtime);
+	
+	for (const layout of runtime.getAllLayouts())
+		layout.addEventListener("beforelayoutstart", () => onLayoutChange(runtime));
+	
+	//onLayoutChange(runtime);
 }
 
-let ballVelX = 250;
-let ballVelY = 250;
+async function onLayoutChange(runtime) {
+	for (const instance of runtime.objects.MenuBtn.getAllInstances())
+		instance.addEventListener("click", onMenuBtnClicked.bind(instance, runtime));
+	
+	console.log("test");
+}
+
+let startVel = 250;
+let ballVelX = startVel;
+let ballVelY = startVel;
 
 let gspeed = 15;
+
+function onMenuBtnClicked(runtime) {
+	switch (this.text) {
+		case "Singleplayer":
+			runtime.goToLayout("GameScreen");
+			break;
+		
+		case "Multiplayer":
+// 			alert("Not available yet!");
+			gameMode = "Multiplayer";
+			runtime.goToLayout("GameScreen");
+			break;
+		
+		case "Directions":
+			runtime.goToLayout("DirectionsScreen");
+			break;
+			
+		case "Go Back":
+			runtime.goToLayout("TitleScreen");
+			break;
+			
+		default:
+			runtime.goToLayout("TitleScreen");
+			break;
+	}
+}
 
 function onBallCollision(runtime, isWall = false, object = null) {
 	// TODO: Fix collision against paddle. Detect side of paddle hit and incorporate paddle velocity into the ball velocity.
@@ -36,9 +81,12 @@ function onBallCollision(runtime, isWall = false, object = null) {
 	const newVel = [isWall ? vel[0] * -1 : vel[0], !isWall ? vel[1] * -1 : vel[1]];
 	const contacts = bphysics.getContactCount();
 	
-	//Im trying to get the ball to correctly bounce in the direction it is traveling. So if it were to hit the wall it would change velocity correctly depending on the angle of the wall and whatnot. I also wanted it to incorporate the velocity of the paddle into bouncing the ball. So say you are moving down and the ball hits while the paddle is moving down. I wanted it to slow down the ball if it were moving up. If the ball is moving down and the paddle moves down when contact is made then it will speed up the ball and give it more "angle." I have a basic bouncing/collision technique already made, but yesterday I tried implementing the way I explained.
+	console.log(bphysics.getContact(0), isWall);
+	bphysics.setVelocity(...newVel);
 	
-	console.log(object);
+	// Keep track of this new velocity so we can keep updating the ball velocity every tick since it loses speed over time.
+	ballVelX = newVel[0];
+	ballVelY = newVel[1];
 	
 	if (object) {
 		const instances = object.getAllInstances();
@@ -53,20 +101,12 @@ function onBallCollision(runtime, isWall = false, object = null) {
 			}
 			
 			const speed = instance?.Speed ?? 0;
-			
-			console.log(speed);
-			
-			//instance.angleS
+			ballVelY += speed * 12;
 			
 			break;
 		}
 	}
-	
-	console.log(bphysics.getContact(0), isWall);
-	bphysics.setVelocity(...newVel);
-	
-	ballVelX = newVel[0];
-	ballVelY = newVel[1];
+
 	
 	// TODO (POSSIBLE?): Is this the best way??? IDK? Couldn't think of any other way using Construct. Other ways involve math I don't want to do.
 	// Add "curvy" collision detection / Rotated walls
@@ -84,41 +124,107 @@ function movePaddle(runtime, paddle, speed = gspeed) {
 	const minHeight = 32 + paddle.height / 2;
 	const minWidht = 0;
 	
+	paddle.Speed = 0;
+	
 	if (runtime.keyboard.isKeyDown("KeyW")) {
 		paddle.y -= speed;
 		paddle.Speed = -speed;
+		
+		// Yea I know this is redundant but eh.
+		if (!ballMoving) {
+			ballMoving = true;
+		}
 	}
 	
 	if (runtime.keyboard.isKeyDown("KeyS")) {
 		paddle.y += speed;
 		paddle.Speed = speed;
+		
+		if (!ballMoving) {
+			ballMoving = true;
+		}
 	}
 	
 	if (runtime.keyboard.isKeyDown("ArrowUp")) {
 		paddle.y -= speed;
 		paddle.Speed = -speed;
+		
+		if (!ballMoving) {
+			ballMoving = true;
+		}
 	}
 	
 	if (runtime.keyboard.isKeyDown("ArrowDown")) {
 		paddle.y += speed;
 		paddle.Speed = speed;
+		
+		if (!ballMoving) {
+			ballMoving = true;
+		}
 	}
 	
 	if (paddle.y >= maxHeight) {
 		paddle.y = maxHeight;
 	}
 	
-	if (paddle.y <= minHeight) {
+	if (paddle.y < minHeight) {
 		paddle.y = minHeight;
 	}
 }
 
-function Tick(runtime)
-{
+function resetBall(rt, ball) {
+	ball.x = rt.layout.width / 2;
+	ball.y = rt.layout.height / 2;
+}
+	
+function resetPaddles(rt, player1, player2) {
+	player1.y = rt.layout.height / 2;
+	player2.y = rt.layout.height / 2;
+}
+	
+function GameTick(runtime) {
 	const ball = runtime.objects.Ball.getFirstInstance();
 	const physics = ball.behaviors.Physics;
-	physics.setVelocity(ballVelX, ballVelY);
-
 	const paddle = runtime.objects.Paddle.getFirstInstance();
+	const paddle2 = runtime.objects.Paddle2.getFirstInstance();
+	
+	if (ballMoving) {
+		physics.isImmovable = false;
+		// Keep track of ballVel so that we have a constant velocity.
+		physics.setVelocity(ballVelX, ballVelY); // I hate gravity and air resistance. I do this to "negate" air resistance and gravity from slowing down the ball.
+		
+		if (ball.x <= (paddle.x - (paddle.width ))) {
+			rightScore++;
+			resetBall(runtime, ball);
+			resetPaddles(runtime, paddle, paddle2);
+			
+			ballVelX = startVel;
+			ballVelY = startVel;
+		}
+		
+		if (ball.x >= (paddle2.x + (paddle2.width))) {
+			leftScore++;
+			resetBall(runtime, ball);
+			resetPaddles(runtime, paddle, paddle2);
+			
+			ballVelX = -startVel;
+			ballVelY = -startVel;
+		}
+	} else {
+		physics.isImmovable = true;
+	}
+
 	movePaddle(runtime, paddle);
+}
+
+function TitleTick(runtime) {
+	
+}
+
+function Tick(runtime)
+{
+	if (runtime.layout.name == "GameScreen")
+		return GameTick(runtime);
+	
+	TitleTick(runtime);
 }

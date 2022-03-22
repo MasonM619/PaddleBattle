@@ -1,0 +1,14 @@
+{
+	"name": "Title",
+	"plugin-id": "Text",
+	"sid": 303144936440956,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		}
+	]
+}

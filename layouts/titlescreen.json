@@ -5,7 +5,289 @@
 			"name": "Layer 0",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [],
+			"instances": [
+				{
+					"type": "Title",
+					"properties": {
+						"text": "Padd e Batt e",
+						"enable-bbcode": true,
+						"font": "Franklin Gothic",
+						"size": 52.10000000000001,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							1,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 16,
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"GlowVertical": {
+							"parameters": {
+								"intensity": 0.9999999999999934
+							}
+						}
+					},
+					"world": {
+						"x": 757,
+						"y": 213.5,
+						"width": 638,
+						"height": 230,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Paddle",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Red",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 17,
+					"instanceVariables": {
+						"Speed": 0
+					},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 1,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						}
+					},
+					"effects": {
+						"GlowHorizontal": {
+							"parameters": {
+								"intensity": 0.31599999999999995
+							}
+						},
+						"GlowVertical": {
+							"parameters": {
+								"intensity": 0.6469999999999999
+							}
+						},
+						"Sharpen": {
+							"parameters": {
+								"intensity": 0.4169999999999998
+							}
+						},
+						"Lighten": {
+							"parameters": {}
+						},
+						"Exposure": {
+							"parameters": {
+								"exposure": 0.124
+							}
+						}
+					},
+					"world": {
+						"x": 1124.9914293608401,
+						"y": 259.4884343341315,
+						"width": -25.16786569071132,
+						"height": 47.28554269989577,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0.005758093751023166,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Paddle2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Blue",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 18,
+					"instanceVariables": {
+						"Speed": 0
+					},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 1,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						}
+					},
+					"effects": {
+						"GlowHorizontal": {
+							"parameters": {
+								"intensity": 0.316
+							}
+						},
+						"GlowVertical": {
+							"parameters": {
+								"intensity": 0.647
+							}
+						},
+						"Sharpen": {
+							"parameters": {
+								"intensity": 0.41700000000000004
+							}
+						},
+						"Lighten": {
+							"parameters": {}
+						},
+						"Exposure": {
+							"parameters": {
+								"exposure": 0.124
+							}
+						}
+					},
+					"world": {
+						"x": 920.0401333578928,
+						"y": 258.03017351261747,
+						"width": -27.839606427248334,
+						"height": 51.06091197343617,
+						"originX": 0.4852941176470588,
+						"originY": 0.5027522935779817,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0.005758093751023166,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MenuBtn",
+					"properties": {
+						"type": "button",
+						"text": "Singleplayer",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": ""
+					},
+					"uid": 19,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 879.5,
+						"y": 453,
+						"width": 161,
+						"height": 51,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "MenuBtn",
+					"properties": {
+						"type": "button",
+						"text": "Multiplayer",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": ""
+					},
+					"uid": 20,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 879.5,
+						"y": 545,
+						"width": 161,
+						"height": 51,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "MenuBtn",
+					"properties": {
+						"type": "button",
+						"text": "Directions",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": ""
+					},
+					"uid": 21,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 879.5,
+						"y": 635,
+						"width": 161,
+						"height": 51,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
 			"sid": 637289439060142,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -37,7 +319,26 @@
 	],
 	"sid": 531435184415925,
 	"nonworld-instances": [],
-	"effectTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal",
+			"instance": {
+				"parameters": {
+					"intensity": 1
+				}
+			}
+		},
+		{
+			"effectId": "gamma",
+			"name": "Gamma",
+			"instance": {
+				"parameters": {
+					"gamma": 3.5
+				}
+			}
+		}
+	],
 	"width": 1920,
 	"height": 1080,
 	"unboundedScrolling": false,

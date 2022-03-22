@@ -10,7 +10,7 @@
 					"type": "BG",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Cave",
+						"initial-animation": "Normal",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -60,7 +60,7 @@
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
-								"enabled": false
+								"enabled": true
 							}
 						}
 					},
@@ -427,8 +427,8 @@
 						}
 					},
 					"world": {
-						"x": 1874.400198099595,
-						"y": 1016.5982361692925,
+						"x": 1873.9210612739785,
+						"y": 1017.2321519516995,
 						"width": 197.049237172213,
 						"height": 33.31000000000017,
 						"originX": 0.5,
