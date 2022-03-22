@@ -122,7 +122,8 @@
 			"topleft",
 			"Title",
 			"MenuBtn",
-			"DirectionBG"
+			"DirectionBG",
+			"MenuBG"
 		],
 		"subfolders": []
 	},

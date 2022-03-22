@@ -7,6 +7,35 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "MenuBG",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 24,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 540,
+						"width": 1920,
+						"height": 1080,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Title",
 					"properties": {
 						"text": "Padd e Batt e",
@@ -39,10 +68,10 @@
 						}
 					},
 					"world": {
-						"x": 757,
-						"y": 213.5,
+						"x": 744,
+						"y": 310.5,
 						"width": 638,
-						"height": 230,
+						"height": 103,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -110,8 +139,8 @@
 						}
 					},
 					"world": {
-						"x": 1124.9914293608401,
-						"y": 259.4884343341315,
+						"x": 1112.9914293608401,
+						"y": 356.4884343341315,
 						"width": -25.16786569071132,
 						"height": 47.28554269989577,
 						"originX": 0.5,
@@ -181,8 +210,8 @@
 						}
 					},
 					"world": {
-						"x": 920.0401333578928,
-						"y": 258.03017351261747,
+						"x": 908.0401333578928,
+						"y": 355.03017351261747,
 						"width": -27.839606427248334,
 						"height": 51.06091197343617,
 						"originX": 0.4852941176470588,
@@ -213,7 +242,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 879.5,
+						"x": 867.5,
 						"y": 453,
 						"width": 161,
 						"height": 51,
@@ -243,7 +272,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 879.5,
+						"x": 867.5,
 						"y": 545,
 						"width": 161,
 						"height": 51,
@@ -273,7 +302,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 879.5,
+						"x": 867.5,
 						"y": 635,
 						"width": 161,
 						"height": 51,
