@@ -29,12 +29,38 @@ async function onBeforeProjectStart(runtime)
 	for (const layout of runtime.getAllLayouts())
 		layout.addEventListener("beforelayoutstart", () => onLayoutChange(runtime));
 	
+	
+	
 	//onLayoutChange(runtime);
 }
 
+function checkForClick(runtime) {
+	if (runtime.layout.name != "TitleScreen" && runtime.layout.name != "DirectionsScreen")
+		return;
+	
+	for (const instance of runtime.objects.SpriteMenuBtn.getAllInstances()) {
+		const [x, y] = runtime.mouse.getMousePosition();
+
+		if (x >= instance.x - (instance.width/2) && x <= instance.x + (instance.width/2)) {
+			if (y >= instance.y - (instance.height/2) && y <= instance.y + (instance.height/2)) {
+				instance.text = instance.instVars.text;
+				console.log(instance.text);
+				let func = onMenuBtnClicked.bind(instance, runtime);
+				func();
+			}
+		}
+	}
+}
+
 async function onLayoutChange(runtime) {
-	for (const instance of runtime.objects.MenuBtn.getAllInstances())
+	for (const instance of runtime.objects.SpriteMenuBtn.getAllInstances()) {
 		instance.addEventListener("click", onMenuBtnClicked.bind(instance, runtime));
+	}
+	
+	let func = checkForClick.bind(null, runtime);
+	
+	document.removeEventListener("click", func);
+	document.addEventListener("click", func);
 	
 	console.log("test");
 }

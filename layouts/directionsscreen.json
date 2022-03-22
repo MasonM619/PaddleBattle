@@ -41,7 +41,7 @@
 						"type": "button",
 						"text": "Go Back",
 						"tooltip": "",
-						"initially-visible": true,
+						"initially-visible": false,
 						"enabled": true,
 						"auto-font-size": true,
 						"checked": false,
@@ -63,6 +63,79 @@
 							1,
 							1
 						]
+					}
+				},
+				{
+					"type": "SpriteMenuBtn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "BlueGreen",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 32,
+					"instanceVariables": {
+						"text": "Go Back"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1767.5591186767992,
+						"y": 78.13922959848833,
+						"width": 249.45570490040376,
+						"height": 69.29325136122326,
+						"originX": 0.5,
+						"originY": 0.5045454545454545,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BtnText2",
+					"properties": {
+						"text": "Go Back",
+						"enable-bbcode": true,
+						"font": "Comic Sans MS",
+						"size": 20.000000000000032,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 33,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1715.0180774462906,
+						"y": 60.43049004516402,
+						"width": 111.37759298155675,
+						"height": 32.25789572021512,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
 					}
 				}
 			],

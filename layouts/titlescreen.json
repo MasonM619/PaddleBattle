@@ -139,8 +139,8 @@
 						}
 					},
 					"world": {
-						"x": 1112.9914293608401,
-						"y": 356.4884343341315,
+						"x": 1112.2838365530558,
+						"y": 358.01185950688625,
 						"width": -25.16786569071132,
 						"height": 47.28554269989577,
 						"originX": 0.5,
@@ -211,7 +211,7 @@
 					},
 					"world": {
 						"x": 908.0401333578928,
-						"y": 355.03017351261747,
+						"y": 356.03017351261747,
 						"width": -27.839606427248334,
 						"height": 51.06091197343617,
 						"originX": 0.4852941176470588,
@@ -232,7 +232,7 @@
 						"type": "button",
 						"text": "Singleplayer",
 						"tooltip": "",
-						"initially-visible": true,
+						"initially-visible": false,
 						"enabled": true,
 						"auto-font-size": true,
 						"checked": false,
@@ -262,7 +262,7 @@
 						"type": "button",
 						"text": "Multiplayer",
 						"tooltip": "",
-						"initially-visible": true,
+						"initially-visible": false,
 						"enabled": true,
 						"auto-font-size": true,
 						"checked": false,
@@ -292,7 +292,7 @@
 						"type": "button",
 						"text": "Directions",
 						"tooltip": "",
-						"initially-visible": true,
+						"initially-visible": false,
 						"enabled": true,
 						"auto-font-size": true,
 						"checked": false,
@@ -314,6 +314,225 @@
 							1,
 							1
 						]
+					}
+				},
+				{
+					"type": "SpriteMenuBtn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "BlueGreen",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 25,
+					"instanceVariables": {
+						"text": "Singleplayer"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 948.2510886912553,
+						"y": 478.5895698149276,
+						"width": 183.51551569254934,
+						"height": 50.97653213681925,
+						"originX": 0.5,
+						"originY": 0.5045454545454545,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BtnText",
+					"properties": {
+						"text": "SinglePlayer",
+						"enable-bbcode": true,
+						"font": "Comic Sans MS",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.9490196078431372,
+							0.9490196078431372,
+							0.9490196078431372,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 26,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 888.7145934905386,
+						"y": 463.53332650292,
+						"width": 127.77919923002901,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteMenuBtn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "BlueSky",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 27,
+					"instanceVariables": {
+						"text": "Multiplayer"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 948.3075118251355,
+						"y": 570.2550903771748,
+						"width": 183.51551569254934,
+						"height": 50.97653213681925,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BtnText",
+					"properties": {
+						"text": "Multiplayer",
+						"enable-bbcode": true,
+						"font": "Comic Sans MS",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.9490196078431372,
+							0.9490196078431372,
+							0.9490196078431372,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 28,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 893.7710166244188,
+						"y": 556.1988470651672,
+						"width": 127.77919923002901,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteMenuBtn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "HotPink",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 29,
+					"instanceVariables": {
+						"text": "Directions"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 948.6661357839521,
+						"y": 660.3503872810038,
+						"width": 183.51551569254934,
+						"height": 50.97653213681925,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BtnText",
+					"properties": {
+						"text": "Directions",
+						"enable-bbcode": true,
+						"font": "Comic Sans MS",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.9490196078431372,
+							0.9490196078431372,
+							0.9490196078431372,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 30,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 899.1296405832354,
+						"y": 646.2941439689962,
+						"width": 127.77919923002901,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
 					}
 				}
 			],

@@ -47,6 +47,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
@@ -123,7 +131,11 @@
 			"Title",
 			"MenuBtn",
 			"DirectionBG",
-			"MenuBG"
+			"MenuBG",
+			"SpriteMenuBtn",
+			"BtnText",
+			"Mouse",
+			"BtnText2"
 		],
 		"subfolders": []
 	},
@@ -143,7 +155,8 @@
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Event sheet 1",
+			"Titlescreen"
 		],
 		"subfolders": []
 	},
