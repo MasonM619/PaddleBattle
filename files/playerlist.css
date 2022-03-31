@@ -1,0 +1,10 @@
+.player {
+	color: white;
+	
+	font-family: "Haettenschweiler";
+	font-size: 1.15em;
+}
+
+.player .tag {
+	color: red;
+}

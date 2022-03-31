@@ -1,0 +1,324 @@
+{
+	"name": "MultiplayerSetupScreen",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "MenuBG",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 37,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 540,
+						"width": 1920,
+						"height": 1080,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Title",
+					"properties": {
+						"text": "Game Setup",
+						"enable-bbcode": true,
+						"font": "Franklin Gothic",
+						"size": 52.10000000000001,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							1,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 38,
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"GlowVertical": {
+							"parameters": {
+								"intensity": 0.9999999999999934
+							}
+						}
+					},
+					"world": {
+						"x": 770,
+						"y": 308.5,
+						"width": 638,
+						"height": 103,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteMenuBtn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "BlueGreen",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 44,
+					"instanceVariables": {
+						"text": "Join Room"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 948.2510886912553,
+						"y": 527.58957,
+						"width": 183.51551569254934,
+						"height": 50.97653213681925,
+						"originX": 0.5,
+						"originY": 0.5045454545454545,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BtnText",
+					"properties": {
+						"text": "Join Room",
+						"enable-bbcode": true,
+						"font": "Comic Sans MS",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.9490196078431372,
+							0.9490196078431372,
+							0.9490196078431372,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 45,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 856.2708419282749,
+						"y": 502.2340275600073,
+						"width": 184.03282744888554,
+						"height": 50.8921315352398,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RoomInput",
+					"properties": {
+						"text": "",
+						"placeholder": "Input Room Code",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"read-only": false,
+						"spell-check": false,
+						"type": "text",
+						"auto-font-size": true,
+						"id": "roomcode"
+					},
+					"uid": 39,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 825.1062133842718,
+						"y": 451.4371294935985,
+						"width": 245.49136192590754,
+						"height": 38.100287766577424,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "SpriteMenuBtn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "BlueGreen",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 40,
+					"instanceVariables": {
+						"text": "Go Back"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1456,
+						"y": 286,
+						"width": 249.45570490040376,
+						"height": 69.29325136122326,
+						"originX": 0.5,
+						"originY": 0.5045454545454545,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BtnText2",
+					"properties": {
+						"text": "Go Back",
+						"enable-bbcode": true,
+						"font": "Comic Sans MS",
+						"size": 20.000000000000032,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 41,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1405,
+						"y": 268,
+						"width": 111.37759298155675,
+						"height": 32.25789572021512,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 852316400260164,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 825836836363792,
+	"nonworld-instances": [],
+	"effectTypes": [
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal",
+			"instance": {
+				"parameters": {
+					"intensity": 1
+				}
+			}
+		},
+		{
+			"effectId": "gamma",
+			"name": "Gamma",
+			"instance": {
+				"parameters": {
+					"gamma": 3.5
+				}
+			}
+		}
+	],
+	"width": 1920,
+	"height": 1080,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": null
+}

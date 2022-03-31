@@ -55,6 +55,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "iframe",
+			"name": "iframe",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
@@ -135,7 +151,13 @@
 			"SpriteMenuBtn",
 			"BtnText",
 			"Mouse",
-			"BtnText2"
+			"BtnText2",
+			"ScoreLeft",
+			"ScoreRight",
+			"Timer",
+			"RoomInput",
+			"PlayerListTitle",
+			"PlayerListFrame"
 		],
 		"subfolders": []
 	},
@@ -149,7 +171,9 @@
 		"items": [
 			"TitleScreen",
 			"GameScreen",
-			"DirectionsScreen"
+			"DirectionsScreen",
+			"MultiplayerSetupScreen",
+			"RoomScreen"
 		],
 		"subfolders": []
 	},
@@ -177,6 +201,14 @@
 					"sid": 675556436450927,
 					"script-info": {
 						"purpose": "imports-for-events"
+					}
+				},
+				{
+					"name": "server.js",
+					"type": "application/javascript",
+					"sid": 848613195838894,
+					"script-info": {
+						"purpose": "none"
 					}
 				}
 			],
@@ -260,7 +292,18 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "playerlist.html",
+					"type": "text/html",
+					"sid": 571650333026741
+				},
+				{
+					"name": "playerlist.css",
+					"type": "text/css",
+					"sid": 217359883232053
+				}
+			],
 			"subfolders": []
 		}
 	},

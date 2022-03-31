@@ -233,7 +233,7 @@
 						"text": "Singleplayer",
 						"tooltip": "",
 						"initially-visible": false,
-						"enabled": true,
+						"enabled": false,
 						"auto-font-size": true,
 						"checked": false,
 						"id": ""
@@ -263,7 +263,7 @@
 						"text": "Multiplayer",
 						"tooltip": "",
 						"initially-visible": false,
-						"enabled": true,
+						"enabled": false,
 						"auto-font-size": true,
 						"checked": false,
 						"id": ""
@@ -293,7 +293,7 @@
 						"text": "Directions",
 						"tooltip": "",
 						"initially-visible": false,
-						"enabled": true,
+						"enabled": false,
 						"auto-font-size": true,
 						"checked": false,
 						"id": ""

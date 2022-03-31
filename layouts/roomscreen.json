@@ -1,0 +1,363 @@
+{
+	"name": "RoomScreen",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "MenuBG",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 42,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 540,
+						"width": 1920,
+						"height": 1080,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Title",
+					"properties": {
+						"text": "Room Setup",
+						"enable-bbcode": true,
+						"font": "Franklin Gothic",
+						"size": 52.10000000000001,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							1,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 43,
+					"instanceVariables": {},
+					"behaviors": {},
+					"effects": {
+						"GlowVertical": {
+							"parameters": {
+								"intensity": 0.9999999999999934
+							}
+						}
+					},
+					"world": {
+						"x": 770,
+						"y": 228.5,
+						"width": 638,
+						"height": 103,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SpriteMenuBtn",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "BlueGreen",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 49,
+					"instanceVariables": {
+						"text": "Go Back"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1461,
+						"y": 286,
+						"width": 249.45570490040376,
+						"height": 69.29325136122326,
+						"originX": 0.5,
+						"originY": 0.5045454545454545,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BtnText2",
+					"properties": {
+						"text": "Go to Menu",
+						"enable-bbcode": true,
+						"font": "Comic Sans MS",
+						"size": 20.000000000000032,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 50,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1392,
+						"y": 268,
+						"width": 145.37759298155675,
+						"height": 32.25789572021512,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PlayerListTitle",
+					"properties": {
+						"text": "Players in Room",
+						"enable-bbcode": true,
+						"font": "Haettenschweiler",
+						"size": 32,
+						"line-height": 0,
+						"bold": false,
+						"italic": true,
+						"color": [
+							0.1411764705882353,
+							0.16862745098039217,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 46,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 362,
+						"y": 236,
+						"width": 378.0830083201351,
+						"height": 61.06245124802026,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PlayerListFrame",
+					"properties": {
+						"url": "playerlist.html",
+						"html": "",
+						"initially-visible": true,
+						"id": "playerlistframe",
+						"allow": "fullscreen; autoplay; encrypted-media",
+						"enable-sandbox": false,
+						"sandbox": "allow-scripts"
+					},
+					"uid": 47,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 315,
+						"y": 309,
+						"width": 306,
+						"height": 551,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "SpriteMenuBtn",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "BlueGreen",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 23,
+					"instanceVariables": {
+						"text": "Start Game"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 950,
+						"y": 365,
+						"width": 249.45570490040376,
+						"height": 69.29325136122326,
+						"originX": 0.5,
+						"originY": 0.5045454545454545,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BtnText2",
+					"properties": {
+						"text": "Start Game",
+						"enable-bbcode": true,
+						"font": "Comic Sans MS",
+						"size": 20.000000000000032,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": false,
+						"origin": "top-left"
+					},
+					"uid": 48,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 881,
+						"y": 347,
+						"width": 145.37759298155675,
+						"height": 32.25789572021512,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 580756259536173,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 315367925849852,
+	"nonworld-instances": [],
+	"effectTypes": [
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal",
+			"instance": {
+				"parameters": {
+					"intensity": 1
+				}
+			}
+		},
+		{
+			"effectId": "gamma",
+			"name": "Gamma",
+			"instance": {
+				"parameters": {
+					"gamma": 3.5
+				}
+			}
+		}
+	],
+	"width": 1920,
+	"height": 1080,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": null
+}
