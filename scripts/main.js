@@ -2,6 +2,7 @@
 // Import any other script files here, e.g.:
 // import * as myModule from "./mymodule.js";
 import connectToServer from "./server.js";
+import { POWERUPS } from "./info.js";
 
 // TODO:
 /*
@@ -49,7 +50,7 @@ function checkForClick(runtime) {
 		return;
 	
 	// This loops checks all SpriteMenuBtn instances or menu buttons
-	// I checks to see if your mouse is hovering over the btn.
+	// It checks to see if your mouse is hovering over the btn.
 	for (const instance of runtime.objects.SpriteMenuBtn.getAllInstances()) {
 		const [x, y] = runtime.mouse.getMousePosition();
 
@@ -79,7 +80,6 @@ async function onLayoutChange(runtime) {
 		instance.addEventListener("click", onMenuBtnClicked.bind(instance, runtime));
 	}
 	
-	console.log("test");
 	layoutChanged = true;
 }
 
@@ -108,8 +108,10 @@ let ballVelX = startVel;
 let ballVelY = startVel;
 
 let gspeed = 15;
+let touches = 0;
 
 let client;
+let ballLastHit = "none";
 
 function setupMultiplayer(runtime) {
 	console.log("Connecting to server");
@@ -200,6 +202,8 @@ function roomJoined(runtime, roomData, clientData) {
 		changeLayout(runtime, "GameScreen");
 	});
 	
+	// Whenever the client recieves data from the server it updates all the objects accordingly
+	// Updates the paddle position everytick from the host
 	client.on("paddleData", (clientData, { paddle }) => {
 		const gpaddle = clientData.isHost
 			? runtime.objects.Paddle.getFirstInstance()
@@ -209,6 +213,7 @@ function roomJoined(runtime, roomData, clientData) {
 		gpaddle.y = paddle.y;
 	});
 	
+	// Updates ball movment every tick from the host
 	client.on("ballData", ({ ball }) => {
 		const gball = runtime.objects.Ball.getFirstInstance();
 		const gphysics = gball.behaviors.Physics;
@@ -218,6 +223,7 @@ function roomJoined(runtime, roomData, clientData) {
 		gphysics.angularVelocity = ball.angularVelocity;
 	});
 	
+	// This listener responds whenever the ball is scored
 	client.on("gameData", ({
 		ball,
 		paddle,
@@ -316,8 +322,18 @@ function onBallCollision(runtime, isWall = false, object = null) {
 				continue;
 			}
 			
+			const name = instance.objectType?.name || "none";
+			
 			const speed = instance?.Speed ?? 0;
 			ballVelY += speed * 12;
+			touches++;
+			
+			ballLastHit = name;
+			
+			if (touches % 5 == 0) {
+				ballVelX += 6;
+				ballVelY += 6;
+			}
 			
 			break;
 		}
@@ -387,9 +403,11 @@ function movePaddle(runtime, paddle, speed = gspeed) {
 		paddle.y = minHeight;
 	}
 	
-	client.send("paddleDataUpdate", {
-		paddle: { x: paddle.x, y: paddle.y, speed: paddle.Speed }
-	});
+	if (gameMode === "Multiplayer") {
+		client.send("paddleDataUpdate", {
+			paddle: { x: paddle.x, y: paddle.y, speed: paddle.Speed }
+		});
+	}
 }
 
 function resetBall(rt, ball) {
@@ -422,13 +440,15 @@ function addPoint(runtime, player, paddle, paddle2, ball) {
 	resetBall(runtime, ball);
 	resetPaddles(runtime, paddle, paddle2);
 	
-	client.send("gameDataUpdate", {
-		ball: { x: ball.x, y: ball.y, angularVelocity: ball.behaviors.Physics.angularVelocity },
-		paddle: { x: paddle.x, y: paddle.y },
-		paddle2: { x: paddle2.x, y: paddle2.y },
-		scoreLeft: leftScore,
-		scoreRight: rightScore
-	});
+	if (gameMode === "Multiplayer" && client && client.isHost) {
+		client.send("gameDataUpdate", {
+			ball: { x: ball.x, y: ball.y, angularVelocity: ball.behaviors.Physics.angularVelocity },
+			paddle: { x: paddle.x, y: paddle.y },
+			paddle2: { x: paddle2.x, y: paddle2.y },
+			scoreLeft: leftScore,
+			scoreRight: rightScore
+		});	
+	}
 }
 	
 function checkForPoint(runtime, paddle, paddle2, ball) {
@@ -439,6 +459,39 @@ function checkForPoint(runtime, paddle, paddle2, ball) {
 	if (ball.x >= (paddle2.x + (paddle2.width))) {
 		addPoint(runtime, 0, paddle, paddle2, ball);
 	}
+}
+
+const allPowerUps = Object.keys(POWERUPS);
+let powerUpTimer;
+function spawnPowerUp(runtime) {
+	const x = Math.floor(Math.random() * (runtime.layout.width - 35) + 35);
+	const y = Math.floor(Math.random() * (runtime.layout.height - 35) + 35);
+	const powerUpType = Math.floor(Math.random() * 3);
+	const instance = runtime.objects.Powerup.createInstance(0, x, y, false);
+	
+	const powerUp = POWERUPS[allPowerUps[powerUpType]];
+	instance.isVisible = true;
+	
+	if (powerUp.action) {
+		powerUp.action(runtime, instance);
+	}
+}
+
+function checkPowerUpSpawn(runtime) {
+	if (powerUpTimer != 0 && typeof powerUpTimer !== "undefined")
+		return;
+	
+	if (gameMode === "Multiplayer" && client && !client.isHost)
+		return;
+	
+	const time = Math.floor(Math.random() * 10000 + 4500 * 3.55);
+	powerUpTimer = setTimeout((rt) => {
+		powerUpTimer = undefined;
+		
+		spawnPowerUp(rt);
+	}, time, runtime);
+	
+	console.log(time);
 }
 	
 function GameTick(runtime) {
@@ -475,6 +528,8 @@ function GameTick(runtime) {
 	} else if (gameMode === "SinglePlayer") {
 		movePaddle(runtime, paddle);		
 	}
+	
+	checkPowerUpSpawn(runtime);
 }
 
 function TitleTick(runtime) {

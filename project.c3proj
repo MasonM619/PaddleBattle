@@ -157,7 +157,8 @@
 			"Timer",
 			"RoomInput",
 			"PlayerListTitle",
-			"PlayerListFrame"
+			"PlayerListFrame",
+			"Powerup"
 		],
 		"subfolders": []
 	},
@@ -207,6 +208,14 @@
 					"name": "server.js",
 					"type": "application/javascript",
 					"sid": 848613195838894,
+					"script-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "info.js",
+					"type": "application/javascript",
+					"sid": 220701692381589,
 					"script-info": {
 						"purpose": "none"
 					}

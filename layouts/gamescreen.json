@@ -122,7 +122,7 @@
 							"properties": {
 								"immovable": false,
 								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
+								"prevent-rotation": true,
 								"density": 1,
 								"friction": 0.5,
 								"elasticity": 0.2,
@@ -693,6 +693,35 @@
 						"height": 69,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Powerup",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "FastBall",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 51,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 496.19143433598845,
+						"y": 540.0379068768831,
+						"width": 86.38286867197685,
+						"height": 37.92418624623374,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
